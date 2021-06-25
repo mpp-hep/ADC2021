@@ -18,7 +18,8 @@
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/logo.png" alt="" /></a>
 					<h1><strong>Welcome to the <br />
-						Anomaly Detection Data Challenge!</strong></h1>
+						Anomaly Detection <br />
+						Data Challenge 2021!</strong></h1>
 				</div>
 			</header>
 
@@ -30,8 +31,22 @@
 						<header class="major">
 							<h2>Anomaly Detection Data Challenge 2021</h2>
 						</header>
-						<p> In this challenge, you will develop algorithms for detecting New Physics 
-by reformulating searches as out-of-distribution detection tasks. The algorithms are intended for a "triggering" environment,meaning both resources and time is limited
+						<p> In this challenge, you will develop algorithms for detecting New Physics by reformulating the problem as an out-of-distribution detection task.
+							Armed with four-vectors of the highest-momentum jets, electrons, and muons in a collision event, together with the missing transverse energy,
+							the goal is to pick up New Physics signarures from the overwhelming Standard Model background, using anomaly detection.
+							The algorithms are intended for a "triggering" environment, meaning both resources and time is limited. Therefore only four-vectors are provided
+							for the leading 10 jets, 4 muons, 4 electrons and the missing ET.
+							Further complicating things, is that trigger algorithms must have a very low latency, of around one microsecond, and in addition must be resource efficient.
+							The task is therefore to find the architecture that maximises the sensitivity for New Physics, but at the lowest possible resource budget (computed in FLOPs).
+							The winner will be the team with the highest true positive rate at a fixed false positive rate of 10E-5, roughly the SM suppression needed for a trigger algorithm,
+							and the lowest possible number of FLOPs.
+							
+							We provide a training sample consisting of SM events, a few New Physics test samples, as well as a "black box" test sample, containing a mixture of SM and and unknows New Physics signal...
+							Each team will be asked to submit the list of events passing a selection on the algorithm as well as the total number of FLOPs for the architecture.......
+							
+							A link to the data, an example data reader as well as a few examples of anomaly detection algorithms ( (variational) auto-encoder, graph autoencoder)) is provided below.
+							
+							<strong> Good luck! </strong>
 						<ul class="actions">
 							<li><a href="https://zenodo.org/record/" class="button">Dataset</a></li>
               <li><a href="https://zenodo.org/record/" class="button">Data Reader</a></li>
