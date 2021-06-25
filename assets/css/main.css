@@ -56,7 +56,7 @@ body {
 }
 
 mark {
-	background-color: transparent;
+	background-color: #010203;
 	color: inherit;
 }
 
@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #000000;
+		background: #010203;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
