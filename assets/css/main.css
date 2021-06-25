@@ -56,7 +56,7 @@ body {
 }
 
 mark {
-	background-color: #010203;
+	background-color: #000000;
 	color: inherit;
 }
 
@@ -2576,7 +2576,7 @@ input, select, textarea {
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, 0.0);
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
@@ -2611,7 +2611,7 @@ input, select, textarea {
 		}
 
 		#header h1 {
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(255, 255, 255, 0.0);
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
@@ -2629,7 +2629,7 @@ input, select, textarea {
 	}
 
 		#footer .icons a {
-			color: rgba(255, 255, 255, 0.4);
+			color: rgba(255, 255, 255, 0.0);
 		}
 
 	#footer .copyright {
@@ -2641,7 +2641,7 @@ input, select, textarea {
 	}
 
 		#footer .copyright li {
-			border-left: solid 1px rgba(255, 255, 255, 0.25);
+			border-left: solid 1px rgba(255, 255, 255, 0.0);
 			display: inline-block;
 			line-height: 1em;
 			margin-left: 0.75em;
