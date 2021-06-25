@@ -2575,7 +2575,7 @@ input, select, textarea {
 		background-image: url("../../images/front.png");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
+		background-size: auto,								100%;
 		color: rgba(255, 255, 255, 0.0);
 		height: 100%;
 		left: 0;
