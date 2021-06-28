@@ -2570,7 +2570,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #1f1815;
+		background-color: #000000;
 		background-attachment: scroll;
 		background-image: url("../../images/front.png");
 		background-position: top left;
