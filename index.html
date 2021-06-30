@@ -54,23 +54,20 @@
 							The task is therefore to find the architecture that maximises the sensitivity for New Physics, but at the lowest possible resource budget (computed in FLOPs).
 							The winner will be the team with the highest true positive rate at a fixed false positive rate of 10E-5, roughly the SM suppression needed for a trigger algorithm,
 							and the lowest possible number of FLOPs.
-							<br />
-							<br />
-							We provide a training sample consisting of SM events, a few New Physics test samples, as well as a "black box" test sample, containing a mixture of SM and and unknows New Physics signal...
-							Each team will be asked to submit the list of events passing a selection on the algorithm as well as the total number of FLOPs for the architecture.
+						
 							<header class="minor">
 							<h2>Datasets and examples</h2>
 						</header>
-							A link to the data, an example data reader as well as a few examples of anomaly detection algorithms is provided below. The dataset consists of blablabla.
+							A link to the data is given below. We provide a cocktail of Standard Model events intended for training. In addition, we provide
+						        four different Beyond Standard Model signals one can test models on. Finally, a "blackbox" test sample, 
+						       containing a mixture of SM and an unknow New Physics signal is provided and will be further described in the section below on how to upload a contribution.
 							<br />
 							<ul class="actions">
 							      <li><a href="https://zenodo.org/record/5046389#.YNyFtRMzZqt" class="button">Dataset: Training</a></li>
-							      <li><a href="https://zenodo.org/record/5046446#.YNyFtxMzZqt" class="button">Dataset: Validation</a></li>
+							      <li><a href="https://zenodo.org/record/5046446#.YNyFtxMzZqt" class="button">Dataset: BSM</a></li>
 							      <li><a href="https://zenodo.org/record/" class="button">Dataset: Blackbox</a></li>
 							</ul>
-							<br />
-							<br />
-						
+
 							<ul class="actions">
 								<li><a href="https://zenodo.org/record/" class="button">Code: Data Reader</a></li>
 								<li><a href="https://zenodo.org/record/" class="button">Code: Example architecture</a></li>
@@ -79,7 +76,14 @@
 						<header class="minor">
 							<h2>How to submit a contribution</h2>
 						</header>	
-						In order to participate in the challenge, you need to evaluate your model on the blackbox dataset, containing a mixture of Standard Model and New Physics events. The submission should be a .npy file with the event ID of the events which pass a selection on your algorithm.. blabla
+						In order to participate in the challenge, you need to evaluate your model on the blackbox dataset, 
+						containing a mixture of Standard Model and New Physics events. Each team will be asked to submit a
+						list of events passing a selection on the algorithm as well as the total number of FLOPs for the architecture.
+						The submission should be a .npy file (with event IDs) and a .txt file (with number of floating point operations).
+						The name of the file should be unique and correpond to a participant/group name. Blabla
+						<ul class="actions">
+								<li><a href="https://zenodo.org/record/" class="button">Upload contribution!</a></li>
+							</ul>
 						<br />
 							<strong> Good luck! </strong>
 						
