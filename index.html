@@ -59,7 +59,6 @@
 							<br />
 							To meet the latency constraint field-programmable gate arrays (FPGAs) are typically deployed in the L1 trigger farm of LHC experiments.
 						        Algorithm complexity, and possibly accuracy, could be enhanced by deploying deep learning algorithms on these devices.
-							For example, deep autoencoders are becoming more and more popular for anomaly detection tasks.
 						        To do so, the participants can use the <span style="font-family:'Courier New'">hls4ml</span> library (see below), which was introduced as a tool to automatically translate a given DL model
 						        into high-level synthesis (HLS) code describing the electronic circuit.
 							The HLS code is automatically optimized to achieve the lowest latency and resources for your favourite DL model.
@@ -70,31 +69,30 @@
 							roughly corresponding to the available output data rate budget for a trigger algorithm, and the lowest possible latency and resource usage.
 						
 							<header class="minor">
-							<h2>Datasets</h2>
+							<h2>Datasets and example code</h2>
 						        </header>
 							Links to the data samples are given below. The training dataset contains a cocktail of Standard Model events intended for training and testing.
 						        In addition, we provide four different Beyond Standard Model signals to study the algorithm performance for the New Physics detection task.
 						        A full description of the SM and BSM processes considered can be found in <a href="https://arxiv.org/abs/1811.10276">this paper</a>.
-						        Finally, a "blackbox" test sample, containing a mixture of SM and an unknown New Physics signal is provided
-						        and will be further described in the section below on how to upload your contribution.
+						        Finally, a "blackbox" test sample, containing a mixture of SM and an unknown New Physics signal will be provided the last day
+						        of the conference <a href="https://events.mcs.cmu.edu/qtc2021/">QTC2021</a> conference.
+						        Information on how to upload your contribution based on this black box are provided below.
+						
+							As deep autoencoders are becoming more and more popular for the anomaly detection task we have prepared <a href="https://github.com/mpp-hep/ADC2021-examplecode">examples</a> of these architectures.
+						        In that code you will also see examples on how to read in the dataset and how to evaluate performance.
+
 							<br><br />
 							<ul class="actions">
 							      <li><a href="https://zenodo.org/record/5046389#.YNyFtRMzZqt" class="button">SM Dataset: Training</a></li>
 							      <li><a href="https://zenodo.org/record/5046446#.YNyFtxMzZqt" class="button">BSM Dataset: A to 4 leptons</a></li>
 							      <li><a href="https://zenodo.org/record/5055454#.YN7TyW6xVbV" class="button">BSM Dataset: LQ to b&tau;</a></li>
-							      <li><a href="https://zenodo.org/record/" class="button">Dataset: Blackbox</a></li>
+							      <!---<li><a href="https://zenodo.org/record/" class="button">Dataset: Blackbox</a></li>--->
 							</ul>
-
-
-
-							<header class="minor">
-							<h2>Example code</h2>
-						        </header>
 						
-							<ul class="actions">
+							<!---ul class="actions">
 								<li><a href="https://github.com/anomalyHackathon/L1_anomalyDetection/" class="button">Code: Data Reader</a></li>
 								<li><a href="https://github.com/anomalyHackathon/L1_anomalyDetection/" class="button">Code: Example architecture</a></li>
-							</ul>
+							</ul--->
 
 							<header class="minor">
 							<h2>The <span style="font-family:'Courier New'">hls4ml</span> library</h2>
