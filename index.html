@@ -53,15 +53,15 @@
 							Furthermore, only a maximum of X, Y, and Z bits are available for the representation of the &eta;, &phi;, and the transverse momentum p<sub>T</sub> of each physics object, respectively.
 							<br />
 							<br />
-							Further complicating things, is that trigger algorithms must have a very low latency, of around one microsecond, and in addition must be resource efficient.
-							The task is therefore to design an architecture that maximises the sensitivity for New Physics, but at the lowest possible resource and latency budget.
-							An estimate of the algorithm efficiency can be obtained by calculating the floating-point operations per second (FLOPS).
-							An example how to calculate FLOPs is provided <a href="https://github.com/mpp-hep/ADC2021-examplecode/blob/main/computeFLOPs.ipynb">here</a>.
+							Further complicating things, is that trigger algorithms must have a very low latency, of around one microsecond, and in addition must be highly resource efficient.
+							The task is therefore to design an architecture that maximises the sensitivity for New Physics, but at the lowest possible resource and latency cost.
+							An estimate of the algorithm efficiency can be obtained by calculating the number of floating-point operations of the model (FLOPs).
+							An example of how to calculate FLOPs is provided <a href="https://github.com/mpp-hep/ADC2021-examplecode/blob/main/computeFLOPs.ipynb">here</a>.<br />
 						
 							<header class="minor">
 							<h2>FPGA inference with hls4ml</h2>
 						        </header>
-							To meet the latency constraint field-programmable gate arrays (FPGAs) are typically deployed in the L1 trigger farm of LHC experiments.
+							To meet the latency constraint, field-programmable gate arrays (FPGAs) are typically deployed in the L1 trigger farm of LHC experiments.
 						        Algorithm complexity, and possibly accuracy, could be enhanced by deploying deep learning algorithms on these devices.
 						        To do so, the participants can use the <span style="font-family:'Courier New'">hls4ml</span> library (see below), which was introduced as a tool to automatically translate a given DL model
 						        into high-level synthesis (HLS) code describing the electronic circuit.
@@ -73,7 +73,7 @@
 							roughly corresponding to the available output data rate budget for a trigger algorithm, at the lowest possible latency and resource utilization.
 							<br />
 							<br />
-							Do not miss the introduction to the challenge at <a href="https://indico.cern.ch/event/980214/contributions/4413658/">ML4Jets2021</a>!
+							Do not miss the introduction to the challenge at <a href="https://indico.cern.ch/event/980214/contributions/4413658/">ML4Jets2021</a>!<br />
 							
 							<header class="minor">
 							<h2>Datasets and example code</h2>
