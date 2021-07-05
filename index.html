@@ -44,8 +44,9 @@
 						<p> In this challenge, you will develop algorithms for detecting New Physics by reformulating the problem as an out-of-distribution detection task.
 							Armed with four-vectors of the highest-momentum jets, electrons, and muons produced in a LHC collision event, together with the missing transverse energy (missing E<sub>T</sub>),
 							the goal is to find a-priori unknown and rare New Physics hidden in a data sample dominated by ordinary Standard Model processes, using anomaly detection approaches.
-							<br />
-							<br />
+							<header class="minor">
+							<h2>Real-time event filtering</h2>
+						        </header>
 							The algorithms are intended to be deployed in the first stage of the real-time event filter processing system of LHC experiments (Level 1 or L1 trigger), where the available bandwidth, latency and resources are strictly limited.
 							Such limitations constrain the design of the algorithm. To emulate the constraints in terms of bandwith only the leading 10 jets, 4 muons, 4 electrons and the missing E<sub>T</sub> will be provided to be used as input to the algorithm.
 							Furthermore, only a maximum of X, Y, and Z bits are available for the representation of the &eta;, &phi;, and the transverse momentum p<sub>T</sub> of each physics object, respectively.
@@ -55,8 +56,9 @@
 							The task is therefore to design an architecture that maximises the sensitivity for New Physics, but at the lowest possible resource and latency budget.
 							An estimate of the algorithm efficiency can be obtained by calculating the floating-point operations per second (FLOPS).
 							An example how to calculate FLOPs is provided <a href="https://github.com/mpp-hep/ADC2021-examplecode/blob/main/computeFLOPs.ipynb">here</a>.
-							<br />
-							<br />
+							<header class="minor">
+							<h2>On-FPGA inference with  <span style="font-family:'Courier New'">hls4ml</span></h2>
+						        </header>
 							To meet the latency constraint field-programmable gate arrays (FPGAs) are typically deployed in the L1 trigger farm of LHC experiments.
 						        Algorithm complexity, and possibly accuracy, could be enhanced by deploying deep learning algorithms on these devices.
 						        To do so, the participants can use the <span style="font-family:'Courier New'">hls4ml</span> library (see below), which was introduced as a tool to automatically translate a given DL model
