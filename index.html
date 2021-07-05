@@ -44,6 +44,7 @@
 						<p> In this challenge, you will develop algorithms for detecting New Physics by reformulating the problem as an out-of-distribution detection task.
 							Armed with four-vectors of the highest-momentum jets, electrons, and muons produced in a LHC collision event, together with the missing transverse energy (missing E<sub>T</sub>),
 							the goal is to find a-priori unknown and rare New Physics hidden in a data sample dominated by ordinary Standard Model processes, using anomaly detection approaches.
+							
 							<header class="minor">
 							<h2>Real-time event filtering</h2>
 						        </header>
@@ -56,8 +57,9 @@
 							The task is therefore to design an architecture that maximises the sensitivity for New Physics, but at the lowest possible resource and latency budget.
 							An estimate of the algorithm efficiency can be obtained by calculating the floating-point operations per second (FLOPS).
 							An example how to calculate FLOPs is provided <a href="https://github.com/mpp-hep/ADC2021-examplecode/blob/main/computeFLOPs.ipynb">here</a>.
+						
 							<header class="minor">
-							<h2>FPGA inference with  <span style="font-family:'Courier New'">hls4ml</span></h2>
+							<h2>FPGA inference with hls4ml</h2>
 						        </header>
 							To meet the latency constraint field-programmable gate arrays (FPGAs) are typically deployed in the L1 trigger farm of LHC experiments.
 						        Algorithm complexity, and possibly accuracy, could be enhanced by deploying deep learning algorithms on these devices.
@@ -69,7 +71,6 @@
 							<br />
 						        The participants should aim at achieving the highest true positive rate at a fixed false positive rate of 10<sup>-5</sup>,
 							roughly corresponding to the available output data rate budget for a trigger algorithm, at the lowest possible latency and resource utilization.
-
 							<br />
 							<br />
 							Do not miss the introduction to the challenge at <a href="https://indico.cern.ch/event/980214/contributions/4413658/">ML4Jets2021</a>!
