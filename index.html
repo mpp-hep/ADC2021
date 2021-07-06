@@ -50,8 +50,9 @@
 						        </header>
 							The algorithms are intended to be deployed in the first stage of the real-time event filter processing system of LHC experiments (Level 1 or L1 trigger), where the available bandwidth, latency and resources are strictly limited.
 							Such limitations constrain the design of the algorithm. To emulate the constraints in terms of bandwith only the leading 10 jets, 4 muons, 4 electrons and the missing E<sub>T</sub> will be provided to be used as input to the algorithm.
-							Furthermore, only a maximum of X, Y, and Z bits are available for the representation of the &eta;, &phi;, and the transverse momentum p<sub>T</sub> of each physics object, respectively.
-							<br />
+							Furthermore, only a maximum number of bits is available for the representation of the &eta;, &phi;, and the transverse momentum p<sub>T</sub> of each physics object.
+						        The effect of such <em>quantization</em> of the inputs can be studied for instance with QKeras (see below).
+						        <br />
 							<br />
 							Further complicating things, is that trigger algorithms must have a very low latency, of around one microsecond, and in addition must be highly resource efficient.
 							The task is therefore to design an architecture that maximises the sensitivity for New Physics, but at the lowest possible resource and latency cost.
@@ -90,7 +91,7 @@
 
 							<br><br />
 							<ul class="actions">
-							      <li><a href="https://zenodo.org/record/" class="button" style="width:230px;">Blackbox Dataset</a></li>
+							      <li><a href="https://zenodo.org/record/5070455#.YOSIaG6xVbU" class="button" style="width:230px;">Blackbox Dataset</a></li>
 							      <li><a href="https://zenodo.org/record/5046389#.YNyFtRMzZqt" class="button" style="width:230px;">SM Dataset: Training</a></li>
 							</ul>
 							<ul class="actions">
