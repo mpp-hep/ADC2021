@@ -1,277 +1,277 @@
 <!DOCTYPE HTML>
 <!--
-	Strata by HTML5 UP
+  Strata by HTML5 UP
 
 -->
 <html>
-	<head>
-		<title>Anomaly detection at 40 MHz: Data challenge</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<script>
+  <head>
+    <title>Anomaly detection at 40 MHz: Data challenge</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
                 !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
                 posthog.init('phc_sOP2e7XELOKn4kXPgzjV2L6VSi5JuGPP0RhsIt2rRVF',{api_host:'https://app.posthog.com'})
                 </script>
-	</head>
-				
-	<body class="is-preload">
-		<!-- Header -->
-		<header id="header">
-						
-			<div class="inner">
-<!-- 					<a href="#" class="image avatar"><img src="images/logo.png" alt="" /></a> -->
-					<h1><strong>Welcome to the <br />
-						Anomaly Detection <br />
-						Data Challenge 2021!</strong></h1>
-			</div>
-			
-<!-- 			<div class="right">
-				<ul class="selector">
- 					<li><a href="https://zenodo.org/record/5046389#.YNyCfi0Rpqs" class="button">Dataset</a></li>
-					<li><a href="https://zenodo.org/record/" class="button">Data Reader</a></li>
-					<li><a href="https://zenodo.org/record/" class="button">Models</a></li> 
-					<li><a href="https://github.com/mpp-hep/ADC2021-results" class="button">Upload contribution!</a></li>
-				</ul>
-			</div> -->
-				
-		</header>
+  </head>
 
-		<!-- Main -->
-			<div id="main">
+  <body class="is-preload">
+    <!-- Header -->
+    <header id="header">
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h1>Unsupervised New Physics detection at 40 MHz</h1>
-						</header>
-						<p> In this challenge, you will develop algorithms for detecting New Physics by reformulating the problem as an out-of-distribution detection task.
-							Armed with four-vectors of the highest-momentum jets, electrons, and muons produced in a LHC collision event, together with the missing transverse energy (missing E<sub>T</sub>),
-							the goal is to find a-priori unknown and rare New Physics hidden in a data sample dominated by ordinary Standard Model processes, using anomaly detection approaches.
-							<br />
-							<header class="minor">
-							<h2>Real-time event filtering</h2>
-						        </header>
-							The algorithms are intended to be deployed in the first stage of the real-time event filter processing system of LHC experiments (Level 1 or L1 trigger), where the available bandwidth, latency and resources are strictly limited.
-							Such limitations constrain the design of the algorithm. To emulate the constraints in terms of bandwith only the leading 10 jets, 4 muons, 4 electrons and the missing E<sub>T</sub> will be provided to be used as input to the algorithm.
-							Furthermore, only a maximum number of bits is available for the representation of the &eta;, &phi;, and the transverse momentum p<sub>T</sub> of each physics object.
-						        The effect of such <em>quantization</em> of the inputs can be studied for instance with QKeras (see below).
-						        <br />
-							<br />
-							Further complicating things, is that trigger algorithms must have a very low latency, of around one microsecond, and in addition must be highly resource efficient.
-							The task is therefore to design an architecture that maximises the sensitivity for New Physics, but at the lowest possible resource and latency cost.
-							An estimate of the algorithm efficiency can be obtained by calculating the number of floating-point operations of the model (FLOPs).
-							An example of how to calculate FLOPs is provided <a href="https://github.com/mpp-hep/ADC2021-examplecode/blob/main/computeFLOPs.ipynb">here</a>.<br />
-						        <br />
-							<header class="minor">
-							<h2>FPGA inference with hls4ml</h2>
-						        </header>
-							To meet the latency constraint, field-programmable gate arrays (FPGAs) are typically deployed in the L1 trigger farm of LHC experiments.
-						        Algorithm complexity, and possibly accuracy, could be enhanced by deploying deep learning algorithms on these devices.
-						        To do so, the participants can use the <span style="font-family:'Courier New'">hls4ml</span> library (see below), which was introduced as a tool to automatically translate a given DL model
-						        into high-level synthesis (HLS) code describing the electronic circuit.
-							The HLS code is automatically optimized to achieve the lowest latency and resources for your favourite DL model.
-							With this tool the user can obtain an estimate of these algorithm performance metrics for a deployment on FPGAs for the L1 trigger.
-							<br />
-							<br />
-						        The participants should aim at achieving the highest true positive rate at a fixed false positive rate of 10<sup>-5</sup>,
-							roughly corresponding to the available output data rate budget for a trigger algorithm, at the lowest possible latency and resource utilization.
-							<br />
-							<br />
-							Do not miss the introduction to the challenge at <a href="https://indico.cern.ch/event/980214/contributions/4413658/">ML4Jets2021</a>!<br />
-							<br />
-							<header class="minor">
-							<h2>Datasets and example code</h2>
-						        </header>
-							Links to the data samples are given below. The training dataset contains a cocktail of Standard Model events intended for training and testing.
-						        In addition, we provide four different Beyond Standard Model signals to study the algorithm performance for the New Physics detection task.
-						        Finally, we provide a "blackbox" test sample, containing a mixture of SM and an unknown New Physics signal.
-						        Information on how to upload your contribution based on this sample are provided below.
-						        A full description of the SM and BSM processes considered, the simulation setup, and observables in the dataset can be found in <a href="https://arxiv.org/abs/2107.02157">this paper</a>.					
-							<br />
-							<br />
-						        As deep autoencoders are becoming more and more popular for the anomaly detection task we have prepared <a href="https://github.com/mpp-hep/ADC2021-examplecode">examples</a> of these architectures.
-						        In this example code you will also see how to read in the dataset and how to evaluate the performance.
+      <div class="inner">
+<!--          <a href="#" class="image avatar"><img src="images/logo.png" alt="" /></a> -->
+          <h1><strong>Welcome to the <br />
+            Anomaly Detection <br />
+            Data Challenge 2021!</strong></h1>
+      </div>
 
-							<br><br />
-							<ul class="actions">
-							      <li><a href="https://zenodo.org/record/5070455#.YOSIaG6xVbU" class="button" style="width:230px;">Blackbox Dataset</a></li>
-							      <li><a href="https://zenodo.org/record/5046389#.YNyFtRMzZqt" class="button" style="width:230px;">SM Dataset: Training</a></li>
-							</ul>
-							<ul class="actions">
-							      <li><a href="https://zenodo.org/record/5046446#.YNyFtxMzZqt" class="button" style="width:230px;">BSM Dataset: A to 4 leptons</a></li>
-							      <li><a href="https://zenodo.org/record/5055454#.YN7TyW6xVbV" class="button" style="width:230px;">BSM Dataset: LQ to b&tau;</a></li>
-							</ul>						
-							<ul class="actions">
-							      <li><a href="https://zenodo.org/record/5061633#.YOLJ8m6xXfY" class="button" style="width:230px;">BSM Dataset: h<sup>0</sup> to &tau;&tau;</a></li>
-							      <li><a href="https://zenodo.org/record/5061688#.YOLLU26xVbU" class="button" style="width:230px;">BSM Dataset: h<sup>+</sup> to &tau;&nu;</a></li>
-							</ul>		
-						        <!---ul class="actions">
-								<li><a href="https://github.com/anomalyHackathon/L1_anomalyDetection/" class="button">Code: Data Reader</a></li>
-								<li><a href="https://github.com/anomalyHackathon/L1_anomalyDetection/" class="button">Code: Example architecture</a></li>
-							</ul--->
+<!--      <div class="right">
+        <ul class="selector">
+          <li><a href="https://zenodo.org/record/5046389#.YNyCfi0Rpqs" class="button">Dataset</a></li>
+          <li><a href="https://zenodo.org/record/" class="button">Data Reader</a></li>
+          <li><a href="https://zenodo.org/record/" class="button">Models</a></li>
+          <li><a href="https://github.com/mpp-hep/ADC2021-results" class="button">Upload contribution!</a></li>
+        </ul>
+      </div> -->
 
-							<!---header class="minor">
-							<h2>The <span style="font-family:'Courier New'">hls4ml</span> library</h2>
-						        </header--->						
+    </header>
 
-						
-						<header class="minor">
-							<h2>How to submit a contribution</h2>
-						</header>	
-						In order to participate in the challenge, you need to evaluate your model on the blackbox dataset, 
-						containing a mixture of Standard Model and New Physics events. Each team will be asked to submit 
-						the list of the 10<sup>-5</sup> fraction of events passing a selection on the algorithm metrics as well as the total number of FLOPS for the architecture.
-						We also encourage the teams to achieve a full design for deployment on FPGAs to obtain a more precise estimate
-						of the feasibility for your algorithm to run in the L1 trigger. The design can be achieved through <span style="font-family:'Courier New'">hls4ml</span> (see tutorials and other resources below) or other tools.
-						In this case, the team will also submit the estimated performance on the FPGA in terms of latency and resources.
-						Note that while the tool support the translation for the building blocks of most of the popular DL architectures, more custom ingredients might be missing.
-						In this case, the <span style="font-family:'Courier New'">hls4ml</span> developers team can help on a best-effort basis.
-						The submission should be in a form of a HDF5 file containing a numpy array with the identification numbers of each selected event, plus a dictionary with the algorithm deployment performance, as shown in this <a href="https://github.com/mpp-hep/ADC2021-results/blob/master/upload-your-data.py">example</a>. 
-						The name of the file should be unique and correspond to a participant/group name. Email us to confirm you have submit your contribution! <strong> Deadline: ML4Jets 2022! </strong>
-						<br><br />
-						<ul class="actions">
-								<li><a href="https://github.com/mpp-hep/ADC2021-results" class="button">Upload contribution!</a></li>
-							</ul>
-						<br />
-							<strong> Good luck! </strong>
-						<br />
-						       <strong> Deadline: ML4Jets 2022! </strong>
-						        
-						
-					</section>
-				
-				<section id="features">
-					<div class="container">
-						<header>
-							<h2><strong>Further Reading</strong></h2>
-						</header>
-						<div class="row aln-center">
-							<!-- Feature -->
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<a href="https://arxiv.org/abs/2006.10159" class="image fit thumb image"><img src="images/pynq_floorplan_final.jpeg" alt="" height='100'/></a>
-									<header>
-										<h3><span style="font-family:'Courier New'">hls4ml</span><br /> and Google QKeras</h3>
-									</header>
-								</section>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<a href="https://arxiv.org/search/?query=hls4ml&searchtype=all&source=header" class="image fit thumb image"><img src="images/hls4ml-arxiv.png" alt="" height='100'/></a>
-									<header>
-										<h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> published work</h3>
-									</header>
-								</section>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<a href="https://fastmachinelearning.org/hls4ml/index.html" class="image fit thumb image"><img src="images/hls4ml-doc.png" alt="" height='100'/></a>
-									<header>
-										<h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> library documentation</h3>
-									</header>
-<!-- 									<p>An overview over the hls4ml project</p> -->
-								</section>
-							</div>
-							<!-- Feature end -->
-							<!-- Feature -->
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<a href="https://www.youtube.com/watch?v=0fe_e5OEF54" class="image fit thumb image"><img src="images/hls4ml-tutorial.png" alt=""  height='100'/></a>
-									<header>
-										<h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> video tutorial</h3>
-									</header>
-<!-- 									<p>Jupyter notebooks on how to design ML firmware with hls4ml</p> -->
-								</section>
-							</div>
-							<!-- Feature end -->
-							<!-- Feature -->
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<a href="https://github.com/fastmachinelearning/hls4ml-tutorial" class="image fit thumb image"><img src="images/hls4ml-code.png" alt=""  height='100'/></a>
-									<header>
-										<h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> notebooks</h3>
-									</header>
-<!-- 									<p>Jupyter notebooks on how to design ML firmware with hls4ml</p> -->
-								</section>
-							</div>
-							<!-- Feature end -->
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<a href="https://indico.cern.ch/event/1025534/" class="image fit thumb image"><img src="images/iml.png" alt="" height='100' /></a>
-									<header>
-										<h3> Anomaly Detection:<br /> AD @ 40 MHz</h3>
-									</header>
-<!-- 									<p>A talk on 40 MHz anomaly detection at IML</p> -->
-								</section>
-							</div>
-							<!-- Feature end -->
-						</div>
-				</section>
+    <!-- Main -->
+      <div id="main">
 
-				<!-- Three -->
-					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>Feel free to drop us a message below!</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon fa-home"><span class="label">Address</span></h3>
-										machine learning for Particle Physics (mPP)
-									</li>
-									<li>
-										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-										<a href="#">ekaterina.govorkova@cern.ch</a>
-										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-										<a href="#">ema.puljak@cern.ch</a>
-										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-										<a href="#">jennifer.ngadiuba@cern.ch</a>
-										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-										<a href="#">maurizio.pierini@cern.ch</a>
-										<h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-										<a href="#">thea.aarrestad@cern.ch</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
+        <!-- One -->
+          <section id="one">
+            <header class="major">
+              <h1>Unsupervised New Physics detection at 40 MHz</h1>
+            </header>
+            <p> In this challenge, you will develop algorithms for detecting New Physics by reformulating the problem as an out-of-distribution detection task.
+              Armed with four-vectors of the highest-momentum jets, electrons, and muons produced in a LHC collision event, together with the missing transverse energy (missing E<sub>T</sub>),
+              the goal is to find a-priori unknown and rare New Physics hidden in a data sample dominated by ordinary Standard Model processes, using anomaly detection approaches.
+              <br />
+              <header class="minor">
+              <h2>Real-time event filtering</h2>
+                    </header>
+              The algorithms are intended to be deployed in the first stage of the real-time event filter processing system of LHC experiments (Level 1 or L1 trigger), where the available bandwidth, latency and resources are strictly limited.
+              Such limitations constrain the design of the algorithm. To emulate the constraints in terms of bandwith only the leading 10 jets, 4 muons, 4 electrons and the missing E<sub>T</sub> will be provided to be used as input to the algorithm.
+              Furthermore, only a maximum number of bits is available for the representation of the &eta;, &phi;, and the transverse momentum p<sub>T</sub> of each physics object.
+                    The effect of such <em>quantization</em> of the inputs can be studied for instance with QKeras (see below).
+                    <br />
+              <br />
+              Further complicating things, is that trigger algorithms must have a very low latency, of around one microsecond, and in addition must be highly resource efficient.
+              The task is therefore to design an architecture that maximises the sensitivity for New Physics, but at the lowest possible resource and latency cost.
+              An estimate of the algorithm efficiency can be obtained by calculating the number of floating-point operations of the model (FLOPs).
+              An example of how to calculate FLOPs is provided <a href="https://github.com/mpp-hep/ADC2021-examplecode/blob/main/computeFLOPs.ipynb">here</a>.<br />
+                    <br />
+              <header class="minor">
+              <h2>FPGA inference with hls4ml</h2>
+                    </header>
+              To meet the latency constraint, field-programmable gate arrays (FPGAs) are typically deployed in the L1 trigger farm of LHC experiments.
+                    Algorithm complexity, and possibly accuracy, could be enhanced by deploying deep learning algorithms on these devices.
+                    To do so, the participants can use the <span style="font-family:'Courier New'">hls4ml</span> library (see below), which was introduced as a tool to automatically translate a given DL model
+                    into high-level synthesis (HLS) code describing the electronic circuit.
+              The HLS code is automatically optimized to achieve the lowest latency and resources for your favourite DL model.
+              With this tool the user can obtain an estimate of these algorithm performance metrics for a deployment on FPGAs for the L1 trigger.
+              <br />
+              <br />
+                    The participants should aim at achieving the highest true positive rate at a fixed false positive rate of 10<sup>-5</sup>,
+              roughly corresponding to the available output data rate budget for a trigger algorithm, at the lowest possible latency and resource utilization.
+              <br />
+              <br />
+              Do not miss the introduction to the challenge at <a href="https://indico.cern.ch/event/980214/contributions/4413658/">ML4Jets2021</a>!<br />
+              <br />
+              <header class="minor">
+              <h2>Datasets and example code</h2>
+                    </header>
+              Links to the data samples are given below. The training dataset contains a cocktail of Standard Model events intended for training and testing.
+                    In addition, we provide four different Beyond Standard Model signals to study the algorithm performance for the New Physics detection task.
+                    Finally, we provide a "blackbox" test sample, containing a mixture of SM and an unknown New Physics signal.
+                    Information on how to upload your contribution based on this sample are provided below.
+                    A full description of the SM and BSM processes considered, the simulation setup, and observables in the dataset can be found in <a href="https://arxiv.org/abs/2107.02157">this paper</a>.
+              <br />
+              <br />
+                    As deep autoencoders are becoming more and more popular for the anomaly detection task we have prepared <a href="https://github.com/mpp-hep/ADC2021-examplecode">examples</a> of these architectures.
+                    In this example code you will also see how to read in the dataset and how to evaluate the performance.
 
-			</div>
+              <br><br />
+              <ul class="actions">
+                    <li><a href="https://zenodo.org/record/5072068#.YOSIaG6xVbU" class="button" style="width:230px;">Blackbox Dataset</a></li>
+                    <li><a href="https://zenodo.org/record/5046428#.YNyFtRMzZqt" class="button" style="width:230px;">SM Dataset: Training</a></li>
+              </ul>
+              <ul class="actions">
+                    <li><a href="https://zenodo.org/record/7152590#.YNyFtxMzZqt" class="button" style="width:230px;">BSM Dataset: A to 4 leptons</a></li>
+                    <li><a href="https://zenodo.org/record/7152599#.YN7TyW6xVbV" class="button" style="width:230px;">BSM Dataset: LQ to b&tau;</a></li>
+              </ul>
+              <ul class="actions">
+                    <li><a href="https://zenodo.org/record/7152614#.YOLJ8m6xXfY" class="button" style="width:230px;">BSM Dataset: h<sup>0</sup> to &tau;&tau;</a></li>
+                    <li><a href="https://zenodo.org/record/7152617#.YOLLU26xVbU" class="button" style="width:230px;">BSM Dataset: h<sup>+</sup> to &tau;&nu;</a></li>
+              </ul>
+                    <!---ul class="actions">
+                <li><a href="https://github.com/anomalyHackathon/L1_anomalyDetection/" class="button">Code: Data Reader</a></li>
+                <li><a href="https://github.com/anomalyHackathon/L1_anomalyDetection/" class="button">Code: Example architecture</a></li>
+              </ul--->
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/mpp-hep/" class="icon fa-github"><span class="label">Github</span></a></li>
-						<li><a href="ekaterina.govorkova@cern.ch" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+              <!---header class="minor">
+              <h2>The <span style="font-family:'Courier New'">hls4ml</span> library</h2>
+                    </header--->
+
+
+            <header class="minor">
+              <h2>How to submit a contribution</h2>
+            </header>
+            In order to participate in the challenge, you need to evaluate your model on the blackbox dataset,
+            containing a mixture of Standard Model and New Physics events. Each team will be asked to submit
+            the list of the 10<sup>-5</sup> fraction of events passing a selection on the algorithm metrics as well as the total number of FLOPS for the architecture.
+            We also encourage the teams to achieve a full design for deployment on FPGAs to obtain a more precise estimate
+            of the feasibility for your algorithm to run in the L1 trigger. The design can be achieved through <span style="font-family:'Courier New'">hls4ml</span> (see tutorials and other resources below) or other tools.
+            In this case, the team will also submit the estimated performance on the FPGA in terms of latency and resources.
+            Note that while the tool support the translation for the building blocks of most of the popular DL architectures, more custom ingredients might be missing.
+            In this case, the <span style="font-family:'Courier New'">hls4ml</span> developers team can help on a best-effort basis.
+            The submission should be in a form of a HDF5 file containing a numpy array with the identification numbers of each selected event, plus a dictionary with the algorithm deployment performance, as shown in this <a href="https://github.com/mpp-hep/ADC2021-results/blob/master/upload-your-data.py">example</a>.
+            The name of the file should be unique and correspond to a participant/group name. Email us to confirm you have submit your contribution! <strong> Deadline: ML4Jets 2022! </strong>
+            <br><br />
+            <ul class="actions">
+                <li><a href="https://github.com/mpp-hep/ADC2021-results" class="button">Upload contribution!</a></li>
+              </ul>
+            <br />
+              <strong> Good luck! </strong>
+            <br />
+                   <strong> Deadline: ML4Jets 2022! </strong>
+
+
+          </section>
+
+        <section id="features">
+          <div class="container">
+            <header>
+              <h2><strong>Further Reading</strong></h2>
+            </header>
+            <div class="row aln-center">
+              <!-- Feature -->
+              <div class="col-4 col-6-medium col-12-small">
+                <section>
+                  <a href="https://arxiv.org/abs/2006.10159" class="image fit thumb image"><img src="images/pynq_floorplan_final.jpeg" alt="" height='100'/></a>
+                  <header>
+                    <h3><span style="font-family:'Courier New'">hls4ml</span><br /> and Google QKeras</h3>
+                  </header>
+                </section>
+              </div>
+              <div class="col-4 col-6-medium col-12-small">
+                <section>
+                  <a href="https://arxiv.org/search/?query=hls4ml&searchtype=all&source=header" class="image fit thumb image"><img src="images/hls4ml-arxiv.png" alt="" height='100'/></a>
+                  <header>
+                    <h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> published work</h3>
+                  </header>
+                </section>
+              </div>
+              <div class="col-4 col-6-medium col-12-small">
+                <section>
+                  <a href="https://fastmachinelearning.org/hls4ml/index.html" class="image fit thumb image"><img src="images/hls4ml-doc.png" alt="" height='100'/></a>
+                  <header>
+                    <h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> library documentation</h3>
+                  </header>
+<!--                  <p>An overview over the hls4ml project</p> -->
+                </section>
+              </div>
+              <!-- Feature end -->
+              <!-- Feature -->
+              <div class="col-4 col-6-medium col-12-small">
+                <section>
+                  <a href="https://www.youtube.com/watch?v=0fe_e5OEF54" class="image fit thumb image"><img src="images/hls4ml-tutorial.png" alt=""  height='100'/></a>
+                  <header>
+                    <h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> video tutorial</h3>
+                  </header>
+<!--                  <p>Jupyter notebooks on how to design ML firmware with hls4ml</p> -->
+                </section>
+              </div>
+              <!-- Feature end -->
+              <!-- Feature -->
+              <div class="col-4 col-6-medium col-12-small">
+                <section>
+                  <a href="https://github.com/fastmachinelearning/hls4ml-tutorial" class="image fit thumb image"><img src="images/hls4ml-code.png" alt=""  height='100'/></a>
+                  <header>
+                    <h3><span style="font-family:'Courier New'">hls4ml</span>:<br /> notebooks</h3>
+                  </header>
+<!--                  <p>Jupyter notebooks on how to design ML firmware with hls4ml</p> -->
+                </section>
+              </div>
+              <!-- Feature end -->
+              <div class="col-4 col-6-medium col-12-small">
+                <section>
+                  <a href="https://indico.cern.ch/event/1025534/" class="image fit thumb image"><img src="images/iml.png" alt="" height='100' /></a>
+                  <header>
+                    <h3> Anomaly Detection:<br /> AD @ 40 MHz</h3>
+                  </header>
+<!--                  <p>A talk on 40 MHz anomaly detection at IML</p> -->
+                </section>
+              </div>
+              <!-- Feature end -->
+            </div>
+        </section>
+
+        <!-- Three -->
+          <section id="three">
+            <h2>Get In Touch</h2>
+            <p>Feel free to drop us a message below!</p>
+            <div class="row">
+              <div class="col-8 col-12-small">
+                <form method="post" action="#">
+                  <div class="row gtr-uniform gtr-50">
+                    <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+                    <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+                    <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+                  </div>
+                </form>
+                <ul class="actions">
+                  <li><input type="submit" value="Send Message" /></li>
+                </ul>
+              </div>
+              <div class="col-4 col-12-small">
+                <ul class="labeled-icons">
+                  <li>
+                    <h3 class="icon fa-home"><span class="label">Address</span></h3>
+                    machine learning for Particle Physics (mPP)
+                  </li>
+                  <li>
+                    <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
+                    <a href="#">ekaterina.govorkova@cern.ch</a>
+                    <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
+                    <a href="#">ema.puljak@cern.ch</a>
+                    <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
+                    <a href="#">jennifer.ngadiuba@cern.ch</a>
+                    <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
+                    <a href="#">maurizio.pierini@cern.ch</a>
+                    <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
+                    <a href="#">thea.aarrestad@cern.ch</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+      </div>
+
+    <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li><a href="https://github.com/mpp-hep/" class="icon fa-github"><span class="label">Github</span></a></li>
+            <li><a href="ekaterina.govorkova@cern.ch" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
             
-					</ul>
+          </ul>
           <!-- <ul class="copyright">
             <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
           </ul> -->
-				</div>
-			</footer>
+        </div>
+      </footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.poptrox.min.js"></script>
+      <script src="assets/js/browser.min.js"></script>
+      <script src="assets/js/breakpoints.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
 
-	</body>
+  </body>
 </html>
